@@ -1,0 +1,3 @@
+             Angular Dierectives  - to handile strctured data in view of a compound
+
+             -ngFor   - Can directly apply in html to access element from array

@@ -1,0 +1,38 @@
+
+    <h6 class="text-center">
+        <span class="word mt-4">Welcome To</span>
+        <span class="word mt-2">ICCI Bank</span>
+      </h6>
+    
+
+<form (ngSubmit)="login()" [formGroup]="loginForm">
+   <div class="container w-25 border mt-5 p-3 text-center" style="border-radius: 25px;">
+    <h5 class="text-light fw-bold mt-2">Login To Access Your Account</h5>
+
+
+    <div class="mt-4 p-2">
+        <input name="acno" formControlName="acno"  type="text" class="form-control rounded-pill text-center" placeholder="Account Number" id="acid ">
+    </div>
+
+    <div *ngIf="this.loginForm.get('acno')?.errors && this.loginForm.get('acno')?.touched">
+        <p class="text-danger">invalid ac number</p>
+       </div>
+
+
+    <div class="mt-2 p-2">
+        <input name="psw" formControlName="psw" type="password" class="form-control rounded-pill text-center" placeholder="Password" id="pid">
+    </div>
+
+    <div *ngIf="this.loginForm.get('psw')?.errors && this.loginForm.get('psw')?.touched">
+        <p class="text-danger">invalid password</p>
+       </div>
+
+
+    <div class="text-center mt-2 p-2">
+        <button type="submit" class="btn btn-danger mb-3 rounded-pill fs-4 fw-semibold">Login</button><br>
+        <a class="btn btn-success fs-4" routerLink="register">Register</a>
+
+    </div>
+
+   </div>
+</form>

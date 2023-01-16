@@ -1,0 +1,17 @@
+<div class="container text-white p-5">
+    <h1 class="text-center">Transaction History</h1>
+    <table style="border-radius: 30px;" class="border border-white container w-75 text-center">
+        <thead class="border border-white">
+            <tr>
+                <th  class="border border-white text-info fw-bold">Type</th>
+                <th  class="border border-white text-info fw-bold">Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let i of transaction">
+                <td  class="border border-white">{{i.type}}</td>
+                <td  class="border border-white">{{i.amount}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

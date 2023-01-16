@@ -1,0 +1,121 @@
+Validation in Angular
+-------------------
+we can create form in two ways
+
+  1. Template Driven form
+  2. Model Driven form
+
+       -Reactive form
+       ---------------
+   ReactiveFormsModule  -module used to create model form    
+
+     formBuilder  -class of ReactiveFormsModule
+
+          -group ,array,control
+
+       Validate Model form
+       ------------------
+   Validator - class in angular it includes methods for apply Validation  
+
+   -access errors in Validator rule
+
+     this.registerForm.get('uname')?.errors
+
+                       -valid   -Empty Response
+
+                       -invalid - Content
+
+               if(this.registerForm.get('uname')?.error) {
+
+               }
+  Local Storage in Angular
+  -----------------------
+
+-Store localStorage.setItem()
+-access localStorage.getItem()
+-delete localStorage.removeItem()
+
+parent Child
+-----------
+
+@Input      - Parent To Child data sharing
+
+@Output     - Child to parent data sharing
+
+datas only share via selector of component
+
+
+User Defined Event Creation in Angular
+-----------------------------------
+
+EventEmitter (from Angular Core)   - class used to create events
+emit()                             - to start the event
+
+
+
+Date and Time angular
+-------------------
+
+Date   - class
+ -create an object of class date to access date and time
+
+ Angular PIPE
+ -----------
+
+ to transform datas into another format
+     eg- date PIPE
+    ___________________________________________________________
+   [ node module copy cheyyan   = npm i  koduthal install aakum]
+   _____________________________________________________________
+
+
+
+   CLIENT SERVER INTEGRATION
+   ------------------------
+
+   http request Creation
+   ---------------------
+
+   HttpClientModule     - Module
+   HttpClient           - Class
+
+
+   Asynchronous request in this
+   ---------------------------
+
+   Js - promise  -- resolve  then()
+                  - reject   cath()
+
+  Ts  -observable  - resolve - subscribe()
+                   -reject   - catch()        
+      Rxjs     - Library used to solve Asynchronous code in Ts
+
+  (reactive extension for Js)       
+
+
+  append token in headers of http
+  -------------------------------
+
+  create header 
+
+    HttpHeaders   - class to create header object
+
+    let headers  = new HttpHeaders()
+
+    append token in header object
+
+    headers.append('access token',token)
+
+    eg:  gettoken(){
+   const token=JSON.parse (localStorage.getItem('token') || '')
+
+   let headers=new HttpHeaders()
+   if(token){
+   headers.append('access-token',token)
+  }
+
+  return headers
+ }
+
+
+

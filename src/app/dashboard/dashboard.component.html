@@ -1,0 +1,63 @@
+<h1 class="text-light ms-2 p-4">Welcome {{user}} </h1>
+<h5 class="text-light ms-2 p-4">  {{dateandtime | date : 'short'}} </h5>
+
+<div class="text-light">
+    <a style="text-decoration: none;" routerLink="/transaction"> View Transaction History</a>
+</div>
+
+<div class="mt-5 ms-2">
+    <button (click)="logout()" class="btn btn-outline-success fw-bold">LogOut</button>
+</div>
+
+<div class="mt-5 ms-2">
+    <button (click)="deleteconfirm()" class="btn btn-outline-danger fw-bold rounded-pill">Delete</button>
+</div>
+
+<app-deleteconfirm (onDelete)="delete($event)" (onCancel)="oncancel()" [item]="acno"></app-deleteconfirm>
+
+
+
+<form [ngClass]="acno?'style':''" (ngSubmit)="deposit()" [formGroup]="depositForm">
+    <div class="container w-50 border mt-4 p-3">
+            <h1 class="text-center text-light fw-semibold">Deposit</h1>
+            <div>
+            <input name="acno" formControlName="acno" class="form-control text-center mt-3" type="text" placeholder="ac number" id="acid">
+           </div>
+
+           <div>
+            <input name="psw" formControlName="psw" class="form-control text-center mt-4" type="text" placeholder="password" id="pid">
+           </div>
+
+           <div>
+            <input name="amount" formControlName="amnt" class="form-control text-center mt-4" type="text" placeholder="amount" id="aid">
+           </div>
+
+           <div class="text-center mt-3 ">
+            <button name="submit"  type="submit" class="btn btn-outline-warning mt-4 fw-bold">Deposit</button>
+           </div>
+
+    </div>
+</form>
+
+
+<form [ngClass]="acno?'style':''" (ngSubmit)="withdraw()" [formGroup]="withdrawForm">
+    <div class="container w-50 border mt-4 p-3" style="background-color: rgb(87, 100, 100);">
+            <h1 class="text-center text-light fw-semibold">withdraw</h1>
+            <div>
+            <input name="acno1" formControlName="acno1" class="form-control text-center mt-3" type="text" placeholder="ac number" id="acid1">
+           </div>
+
+           <div>
+            <input name="psw1" formControlName="psw1" class="form-control text-center mt-4" type="text" placeholder="password" id="pid1">
+           </div>
+
+           <div>
+            <input name="amount1" formControlName="amnt1" class="form-control text-center mt-4" type="text" placeholder="amount" id="aid1">
+           </div>
+
+           <div class="text-center mt-3 ">
+            <button name="submit"  type="submit" class="btn btn-outline-info mt-4 fw-bold">withdraw</button>
+           </div>
+
+    </div>
+</form>
